@@ -17,7 +17,7 @@
 ;;;; under the License.
 ;;;;
 
-(defpackage :cl-batteries/json
+(defpackage :boost-json
   (:use :cl)
   (:export
    #:json-decode
@@ -37,7 +37,7 @@
    #:json-getf
    #:json-setf))
 
-(in-package :cl-batteries/json)
+(in-package :boost-json)
 
 ;;; ----------------------------------------------------
 

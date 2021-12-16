@@ -17,7 +17,7 @@
 ;;;; under the License.
 ;;;;
 
-(in-package :cl-batteries/json)
+(in-package :boost-json)
 
 ;;; ----------------------------------------------------
 

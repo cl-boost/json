@@ -1,10 +1,5 @@
-(defpackage :cl-batteries/json-asd
-  (:use :cl :asdf))
-
-(in-package :cl-batteries/json-asd)
-
-(defsystem :cl-batteries/json
-  :name "cl-batteries/json"
+(asdf:defsystem :boost-json
+  :name "boost-json"
   :version "1.1"
   :author "Jeffrey Massung"
   :license "Apache 2.0"
