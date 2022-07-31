@@ -163,7 +163,7 @@
             (let ((c (case (read-char stream)
                        (#\n #\newline)
                        (#\t #\tab)
-                       (#\f #\formfeed)
+                       (#\f #\page)
                        (#\b #\backspace)
                        (#\r #\return)
 

@@ -61,7 +61,7 @@
             ((char= c #\") "\\\"")
             ((char= c #\newline) "\\n")
             ((char= c #\tab) "\\t")
-            ((char= c #\formfeed) "\\f")
+            ((char= c #\page) "\\f")
             ((char= c #\backspace) "\\b")
             ((char= c #\return) "\\r")
             ((char> c #\~)
