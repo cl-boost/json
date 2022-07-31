@@ -160,25 +160,26 @@
        ;; write character to output
        do (if (char/= c #\\)
               (write-char c s)
-            (let ((c (case (read-char stream)
-                       (#\n #\newline)
-                       (#\t #\tab)
-                       (#\f #\formfeed)
-                       (#\b #\backspace)
-                       (#\r #\return)
+            (let* ((c2 (read-char stream))
+                   (c (case c2
+                        (#\n #\newline)
+                        (#\t #\tab)
+                        (#\f #\page)
+                        (#\b #\backspace)
+                        (#\r #\return)
 
-                       ;; read unicode character
-                       (#\u (let ((x1 (digit-char-p (read-char stream) 16))
-                                  (x2 (digit-char-p (read-char stream) 16))
-                                  (x3 (digit-char-p (read-char stream) 16))
-                                  (x4 (digit-char-p (read-char stream) 16)))
-                              (code-char (logior (ash x1 12)
-                                                 (ash x2  8)
-                                                 (ash x3  4)
-                                                 (ash x4  0)))))
+                        ;; read unicode character
+                        (#\u (let ((x1 (digit-char-p (read-char stream) 16))
+                                   (x2 (digit-char-p (read-char stream) 16))
+                                   (x3 (digit-char-p (read-char stream) 16))
+                                   (x4 (digit-char-p (read-char stream) 16)))
+                               (code-char (logior (ash x1 12)
+                                                  (ash x2  8)
+                                                  (ash x3  4)
+                                                  (ash x4  0)))))
 
-                       ;; verbatim character
-                       (otherwise c))))
+                        ;; verbatim character
+                        (otherwise c2))))
               (write-char c s))))))
 
 ;;; ----------------------------------------------------
